@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Divisão</title>
+</head>
+<body>
+    <h1>Calculadora de Divisão</h1>
+    <form>
+        <label for="numerator">Numerador:</label>
+        <input type="text" id="numerator" name="numerator"><br><br>
+        <label for="denominator">Denominador:</label>
+        <input type="text" id="denominator" name="denominator"><br><br>
+        <input type="button" value="Calcular" onclick="calculateDivision()">
+    </form>
+    <p>Resultado: <span id="result"></span></p>
+
+    <script>
+        function calculateDivision() {
+            var numerator = parseFloat(document.getElementById("numerator").value);
+            var denominator = parseFloat(document.getElementById("denominator").value);
+
+            if (denominator === 0) {
+                document.getElementById("result").innerHTML = "Erro: Divisão por zero!";
+            } else {
+                var result = numerator / denominator;
+                document.getElementById("result").innerHTML = "Resultado: " + result;
+            }
+        }
+    </script>
+</body>
+</html>
